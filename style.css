@@ -1,0 +1,597 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilo General */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+/* Encabezado */
+.header {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegura que las partículas estén detrás del contenido */
+  background: #5e2129; /* Color de fondo si es necesario */
+}
+
+/* Menú de Navegación */
+.menu-navegacion.scrolled {
+  background-color: #5e2129;  /* Cambia el fondo cuando el menú ha salido del header */
+  opacity: 0.98;
+}
+.menu-navegacion.scrolled a {
+  color: #fff;  /* Cambia el color de los enlaces cuando el menú ha salido del header */
+}
+
+.menu-navegacion {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;  /* Fondo inicial antes de hacer scroll */
+  text-align: center;
+  font-size: 15px;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
+  z-index: 10000;
+}
+
+.menu-navegacion a {
+  color: #5e2129;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0s ease, border-bottom 0s ease;
+}
+
+.menu-navegacion a:hover {
+  color: #205e56;
+  border-bottom: 2px solid #205e56;  /* Línea debajo del texto */
+  transition: border-bottom 0.3s ease; /* Transición suave */
+}
+
+.contenedor-logo img {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el logo en el contenedor */
+  max-width: 500px; /* Ajusta el tamaño máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+.subtitulo {
+  color: #215e56;
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.titulo {
+  background-color: #fff; /* Fondo blanco */
+  color: #5e2129; /* Color personalizado */
+  text-align: center; /* Centra el texto */
+  padding: 50px 0px; /* Espaciado adicional arriba y abajo */
+  margin: 0 auto; /* Centrado automático */
+  
+}
+
+.descripcion {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Sección Información */
+.info-seccion {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.info-item {
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.info-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #215e56;
+}
+
+.info-item p {
+  color: #333;
+}
+
+.informacion-semillero {
+  background-color: #fff;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenido-info {
+  display: flex;
+  gap: 30px; /* Espacio entre las imágenes y el texto */
+  max-width: 1200px;
+  align-items: center;
+}
+
+.contenido-izquierda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+.imagen-semillero {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-derecha {
+  flex: 2;
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding: 70px;
+}
+
+.contenido-derecha h2 {
+  font-size: 30px;
+  color: #5e2129;
+  margin-bottom: 20px;
+}
+
+.contenido-derecha p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.proyectos-seccion {
+  display: flex;
+  flex-direction: column; /* Mantiene el título arriba */
+  align-items: center; /* Centra el título */
+  gap: 30px;
+  padding: 50px 20px;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.titulo-container {
+  width: 100%;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2em;
+  font-weight: bold;
+  background-color: white;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+/* Contenedor que organiza el menú a la izquierda y los proyectos a la derecha */
+.contenedor-proyectos {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Menú de proyectos a la izquierda */
+.menu-proyectos {
+  background-color: #215e56;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;;
+  
+}
+
+
+/* Contenido de los proyectos a la derecha */
+.contenido-proyecto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 75%;
+}
+
+
+
+.menu-item {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #5e2129;
+  color: #fff;
+}
+
+.menu-item.active {
+  background-color: #5e2129;
+  color: #fff;
+}
+
+.contenido-proyecto {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.proyecto {
+  display: none;
+}
+
+.proyecto img {
+  padding: 10px 10px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.proyecto.active {
+  display: block;
+}
+
+.proyecto.active h2 {
+  color: #215e56;
+}
+
+.proyecto.active img {
+  display: flex;
+  align-items: right;
+  justify-content: center; /* Centra el logo en el contenedor */
+  max-width: 200px; /* Ajusta el tamaño máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor en la página */
+}
+.enfoque-seccion {
+  background-color: white; /* Cambia el fondo a blanco */
+}
+
+
+.cartas {
+  display: flex;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.expert-card {
+  display: inline-block;
+  margin-top: 20px;
+  width: 100%;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+  margin-bottom: 150px;
+  
+}
+.expert-card img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.expert-card img {
+  height: 300px; /* Ajusta el tamaño de las imágenes según necesites */
+  width: 300px;
+  display: block;
+  margin: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.expert-card h3 {
+  font-size: 20px;
+  color: #5e2129;
+  margin: 10px 0;
+}
+
+/* Pie de página */
+footer {
+  background: #60272e;
+  padding-bottom: 0.1px;
+  position: relative;
+}
+
+/* Contenido del pie de página */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin: 20px; /* Agrega un margen de 20px a los lados */
+}
+
+/* Contacto */
+.contact-us {
+  width: 40%;
+  color: white;
+}
+
+.risc_footer {
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Tarjetas de contacto */
+.informacion-final {
+  background-color: #e9e9e9;
+  padding: 50px 20px;
+  align-items: center;
+}
+.menu-item2 {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+.map-container{
+  align-items: center;
+  display: flex;
+}
+
+.contact-card {
+  background-color: #5e2129;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+
+  display: block; /* Asegúrate de que se comporten como bloques */
+  max-width: 300px; /* Limita el ancho para que no se extiendan demasiado */
+}
+.menu-proyectos2 {
+  background-color: #215e56;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;}
+  
+
+/* Marca */
+.brand {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+/* Texto después de la marca */
+.brand + p {
+  font-weight: 500;
+  position: relative;
+  top: 20px;
+}
+.social-media {
+  display: flex; /* Usar flexbox para alinear los íconos */
+  flex-direction: column; /* Cambia la dirección a columna */
+  align-items: center; /* Centra los íconos horizontalmente */
+  gap: 60px; /* Espacio entre los íconos */
+  margin-top: 1px; /* Espacio superior para separar de otros elementos */
+  margin-left: 100px; /* Ajusta este valor para mover los íconos a la derecha */
+}
+.social-media-icon {
+  display: flex; /* Asegúrate de que el icono sea un contenedor flexible */
+  width: 60px;
+  height: 60px;
+  border: 1px solid white;
+  border-radius: 60%;
+  padding: 10px;
+  justify-content: center; /* Centra el contenido dentro del icono */
+  align-items: center; /* Centra verticalmente el contenido */
+  background-color: white; /* Color de fondo del icono */
+}
+.icon-s{
+  margin: 0 auto;
+}
+/* Efecto al pasar el ratón sobre el icono de redes sociales */
+.social-media-icon:hover {
+  background: #5e2129; /* Color de fondo al pasar el mouse */
+  transition: background 0.3s ease; /* Transición suave */
+}
+
+/* Icono dentro del icono de redes sociales */
+.social-media-icon img {
+  width: 100%; /* Ajusta el tamaño de la imagen dentro del icono */
+}
+
+/* Iconos de universidades */
+.iconos-u {
+  display: flex;
+  gap: 10%;
+  align-items: center;
+}
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  z-index: 1000; /* Por encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilitar scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+  background-color: #fff; /* Fondo blanco */
+  margin: 10% auto; /* 10% desde la parte superior y centrado */
+  padding: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  width: 80%; /* Ancho del modal */
+  max-width: 800px; /* Ancho máximo */
+}
+
+.modal-body {
+  display: flex; /* Usar flexbox para alinear imagen y texto */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.modal-image {
+  width: 40%; /* Ancho de la imagen */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-right: 20px; /* Espacio entre imagen y texto */
+}
+
+.modal-text {
+  width: 60%; /* Ancho del texto */
+  font-size: 1.2em; /* Tamaño de fuente */
+  color: #333; /* Color del texto */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.anuncios-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los anuncios */
+  padding: 20px;
+}
+.header2 {
+  height: 20vh;
+  background-size: cover;
+  background-position: center;
+  color: #5e2129;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.titulo3{
+  background-color: #215e56; /* Fondo blanco */
+  color: #fff; /* Color personalizado */
+  text-align: center; /* Centra el texto */
+  padding: 50px 0px; /* Espaciado adicional arriba y abajo */
+  margin: 0 auto; /* Centrado automático */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+.menu-navegacion2 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  background-color: #5e2129;  /* Fondo inicial antes de hacer scroll */
+  text-align: center;
+  font-size: 15px;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
+  z-index: 10000;
+}
+.menu-navegacion2 a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0s ease, border-bottom 0s ease;
+}
+.anuncio {
+  background-color: #fff; /* Fondo blanco para cada anuncio */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  
+}
+
+.anuncio h2 {
+  color: #5e2129; /* Color del título */
+
+}
+
+.fecha {
+  font-size: 14px; /* Tamaño de fuente para la fecha */
+  color: #777; /* Color gris para la fecha */
+}
+
+.imagen-anuncio {
+  width: 100%; /* Ancho completo */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin: 10px 0; /* Margen entre anuncios */
+}
+
+/* Animación de entrada */
+/* Animación de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
